@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>给vue添加methods属性</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="box">
+		<h1>{{name}}</h1>
+		<h1>{{age}}</h1>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data:{
+				name: 'todo',
+				age: 20,
+			},
+			methods:{
+				add: function(){
+					console.log(this.name);  // 'todo'
+					return this;
+				}
+			}
+		});
+		// 手动调用add方法
+		var obj = vm.add();
+		console.log(obj == vm);  //true
+	</script>
+</body>
+</html>
