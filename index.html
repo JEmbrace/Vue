@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>初识vue入门第一课</title>
+	<!-- 按照官方文档，引入开发环境的vue.js，准确的版本为 v2.6.10 -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="box">
+		<!-- 使用双花括号将vue中的数据以文本的形式展示 -->
+		<h1>{{name}}</h1>
+		<h1>{{age}}</h1>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data:{
+				name: 'todo',
+				age: 20,
+			}
+		});
+		var name = vm.$data.name;
+		console.log(name);   // 'todo'
+
+		var age = vm.$data.age;
+		console.log(age);   // 20
+	</script>
+</body>
+</html>
