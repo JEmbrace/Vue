@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue中的指令(中)</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id='box'>
+		<h1 v-show='hideValue'>我是一段文本，会被隐藏</h1>
+		<h1 v-show='showValue'>我是一段文本，会正常显示</h1>
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data: {
+				showValue: true,
+				hideValue: false
+			}
+		});
+	</script>
+</body>
+</html>

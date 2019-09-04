@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue中的指令(中)</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id='box'>
+		<input v-model='msg' type='text'/>
+		<br>
+		这里是msg的值：{{msg}}
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data: {
+				msg: 'hello'
+			}
+		});
+	</script>
+</body>
+</html>
