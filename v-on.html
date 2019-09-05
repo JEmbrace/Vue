@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue中的指令(中)</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="box">
+		<button v-on:click="clickMe">点击我,我会调用一个函数</button>
+		<hr>
+		<button v-on:click="counter++">点击我,count就会加1</button>
+		<p>counter = {{counter}}</p>
+		<hr>
+		v-on:的另外一种写法@click
+		<button @click="counter++">点击我,count就会加1</button>
+	</div>
+
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data: {
+				counter: 0
+			},
+			methods: {
+				clickMe: function(){
+					// 事件对象
+					console.log(event);
+					// 事件绑定的元素
+					console.log(event.target);
+
+				}
+			}
+		})
+	</script>
+</body>
+</html>
