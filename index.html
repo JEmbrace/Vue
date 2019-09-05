@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue中的计算属性</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="box">
+		<!-- 在模板处理数据 -->
+		{{message.split(",").join("-")}}
+		<br>
+
+		<!-- 将数据处理写到计算属性中 -->
+		{{resetMessage}}
+		<br>
+		
+		<!-- 计算属性使用方法实现 -->
+		{{m_resetMessage()}}
+
+
+	</div>
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#box',
+			data: {
+				message: 'A,B,C,D,E,F,G'
+			},
+			methods: {
+				// 计算属性使用方法去实现
+				// 方法名不能和计算属性重复，否则计算属性在模板中会解析成函数
+				m_resetMessage: function(){
+					return this.message.split(",").join("-");
+				}
+
+			},
+			computed: {
+				// 计算属性：函数的名称必须和属性有关联 xxxMessage
+				resetMessage: function(){
+					return this.message.split(",").join("-");
+				}
+				// 此处可以编写多个关于message的计算属性
+
+			}
+		})
+	</script>
+</body>
+</html>
